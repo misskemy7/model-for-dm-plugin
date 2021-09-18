@@ -7,6 +7,8 @@ These models show descriptions of the format of what you either  post or get.
 
  ## Message link Response ; 
  The message link response  creates a link for a particular message. It takes the room and message id’s and converts it to a link.
+ 
+ For example,
 {
 room_id
 string
