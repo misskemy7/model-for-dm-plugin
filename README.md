@@ -8,7 +8,7 @@ These models show descriptions of the format of what you either  post or get.
  ## Message link Response ; 
  The message link response  creates a link for a particular message. It takes the room and message id’s and converts it to a link.
  
- '''
+ ```
 {
 room_id
 string
@@ -24,7 +24,7 @@ title: Link
 readOnly: true
 minLength: 1
 }
-'''
+```
 
 ## Room:  
 The room has an organization id which is the organization using that room.
@@ -33,7 +33,7 @@ The room has an organization id which is the organization using that room.
 - **Pinned** shows the list of the users that pinned a particular message
 - **the fields on astericks are very important.**
 
-
+```
 org_id*
 string
 title: Org id
@@ -57,20 +57,22 @@ title: Created at
 readOnly: true
 default: 2021-09-16T08:29:25.303576Z
 }
-
+```
 
 ## CREATE ROOM RESPONSE
+```
 {
 room_id
 string
 title: Room id
 readOnly: true
 } 
-
+```
 
 ## MESSAGE RESPONSE 
 It takes a status (read or not), message id and a thread (if it has a thread).
 
+```
 {
 status
 string
@@ -95,11 +97,12 @@ string($date-time)
 title: Created at
 readOnly: true
 }
+```
 
 ## ROOM INFO RESPONSE
  It gives information about a particular room. It has the Id of the room, the organization that owns the room, the id’s of the users of that room and the description of the room (example: this chat is between...)
 
-
+```
 {
 _id
 string
@@ -123,10 +126,11 @@ title: Description
 readOnly: true
 minLength: 1
 }
-
+```
 
 ## THREAD 
 A thread is like a message within a message. it contains the id of the message, the sender id, the message and media contained in the message.
+```
 {
 message_id*
 string
@@ -152,8 +156,8 @@ string($date-time)
 title: Created at
 default: 2021-09-16T08:29:25.315456Z
 }
+```
 
- 
 ## MESSAGE 
 - **Room id** specifies the room that a message belongs to so that if queries are to be made, it can be referenced. 
 - **Message** contains the information that is sent
@@ -163,6 +167,7 @@ default: 2021-09-16T08:29:25.315456Z
 - **Saved by** it has a saving functionality. it  takes a list of users that saved a particular message.
 - **Threads** takes in a message id, sender id, and message. It is  basically a message within a message.
 
+```
 {
 sender_id*
 string
@@ -227,10 +232,13 @@ string($date-time)
 title: Created at
 default: 2021-09-16T08:29:25.316043Z
 }
+```
 
 
 ## THREAD RESPONSE
  it is used to get information about a particular thread.
+ 
+ ```
 {
 status
 string
@@ -258,4 +266,6 @@ created_at
 string($date-time)
 title: Created at
 readOnly: true
-}# model-for-dm-plugin
+}
+```
+# model-for-dm-plugin
